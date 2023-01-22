@@ -27,7 +27,9 @@ const router = createBrowserRouter([
         }}
         sm
       >
-        <Text color="warning">404 Bitch</Text>
+        <Text color="warning" h1>
+          404 Bitch
+        </Text>
       </Container>
     ),
   },
@@ -45,7 +47,7 @@ const router = createBrowserRouter([
         }}
         sm
       >
-        <Text color="warning">404 Bitch</Text>
+        <Text color="warning" h1>404 Bitch</Text>
       </Container>
     ),
   },

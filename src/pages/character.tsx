@@ -1,9 +1,17 @@
 import { useParams } from 'react-router-dom'
 import { useCharacter } from '../hooks/useCharacter'
-import { Loading, Text, Grid, Card, Row, Container } from '@nextui-org/react'
+import {
+  Loading,
+  Text,
+  Image,
+  Container,
+  Button,
+  Link,
+} from '@nextui-org/react'
 
 const Character = () => {
   const { id } = useParams()
+
   const { error, loading, data } = useCharacter(id)
 
   return (
@@ -22,6 +30,11 @@ const Character = () => {
       ) : data ? (
         <>
           <Text h2>Rick & Morty GraphQl</Text>
+          <Image src={data.character.image} />
+          <p>{data.character.name}</p>
+          <Link href="/" color="text">
+            <Button>Back Home</Button>
+          </Link>
         </>
       ) : error ? (
         <Text color="error">{error.message}</Text>

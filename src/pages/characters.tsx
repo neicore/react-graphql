@@ -1,6 +1,13 @@
-import { Loading, Text, Grid, Card, Row, Container } from '@nextui-org/react'
+import {
+  Loading,
+  Text,
+  Grid,
+  Card,
+  Row,
+  Container,
+  Link,
+} from '@nextui-org/react'
 import { useCharacters } from '../hooks/useCharacters'
-import { Link } from 'react-router-dom'
 
 const Characters = () => {
   const { error, loading, data } = useCharacters()
@@ -24,7 +31,7 @@ const Characters = () => {
           <Grid.Container gap={2} justify="space-between">
             {data.characters.results.map((c: any, index: number) => (
               <Grid xs={12} sm={3} key={index}>
-                <Link to={`/${c.id}`}>
+                <Link href={`/${c.id}`}>
                   <Card isPressable>
                     <Card.Body css={{ p: 0 }}>
                       <Card.Image
