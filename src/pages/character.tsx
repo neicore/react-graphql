@@ -11,6 +11,7 @@ import {
 
 const Character = () => {
   const { id } = useParams()
+  console.log(id, ' use paramz;')
 
   const { error, loading, data } = useCharacter(id)
 
